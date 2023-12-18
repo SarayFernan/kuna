@@ -1,4 +1,5 @@
 ﻿
+using kuna.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -10,9 +11,12 @@ namespace kuna.View
     /// </summary>
     public partial class LoginView : Window
     {
+        private LoginViewModel viewModel = new LoginViewModel();
+
         public LoginView()
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
@@ -33,7 +37,25 @@ namespace kuna.View
         {
             Application.Current.Shutdown();
         }
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            if (viewModel.Login())
+            {
+                this.Visibility = Visibility.Hidden;
+                MainWindow mainView = new MainWindow();
+                mainView.Show();
+                this.Close();
+            }
+        }
 
+
+        private void btnResetSesion_Click(object sender, RoutedEventArgs e)
+        {
+            txtUser.Text = string.Empty;
+            pass.Password.Clear();
+            
+            
+        }
         private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
         {
 

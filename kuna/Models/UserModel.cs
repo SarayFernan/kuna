@@ -8,11 +8,10 @@ namespace kuna.Model
 {
     public class UserModel
     {
-        public String id { get; set; }
-        public String Username { get; set; }
-        public String Password { get; set; }
-        public String Name { get; set; }
-        public String LastName { get; set; }
-        public String Email { get; set; }
+        private string name;
+        private string password;
+
+        public String Name { get => name; set => name = value; }
+        public String Password { get => password; set => password = value; }
     }
 }

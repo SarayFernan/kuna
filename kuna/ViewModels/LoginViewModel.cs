@@ -1,4 +1,4 @@
-﻿using kuna.Model;
+﻿using kuna.Models;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
@@ -39,8 +39,8 @@ namespace kuna.ViewModel
                 OnPropertyChanged(nameof(username));
             }
         }
-        public SecureString Password 
-        { 
+        public SecureString Password
+        {
             get
             {
                 return password;
@@ -48,9 +48,10 @@ namespace kuna.ViewModel
 
             set
             {
-                password = value; 
+                password = value;
                 OnPropertyChanged(nameof(password));
             }
+
         }
         public string ErrorMessage 
         { 
@@ -93,6 +94,21 @@ namespace kuna.ViewModel
             RecoverPasswordCommand = new ViewModelCommand(p => ExecuteRecoverPassComand("", ""));
         }
 
+        public bool Login()
+        {
+            bool autentication = ServiceUser.AuthenticateUser(Username, Password);
+
+            if (!autentication)
+            {
+                ErrorMessage = "Usuario o contraseña incorrecto";
+            }
+            else
+            {
+                ServiceUser.username = Username;
+            }
+
+            return autentication;
+        }
        
 
         //Validar los datos del login
@@ -100,7 +116,7 @@ namespace kuna.ViewModel
         {
             bool validData;
 
-            if (string.IsNullOrWhiteSpace(username) || username.Length < 3 ||
+            if (string.IsNullOrWhiteSpace(Username) || Username.Length < 3 ||
                 Password == null || Password.Length < 3)
                 validData = false;
             else
@@ -124,6 +140,8 @@ namespace kuna.ViewModel
                 ErrorMessage = "* Invalid username or password";
             }*/
         }
+
+        
 
         private void ExecuteRecoverPassComand(string username , string email)
         {

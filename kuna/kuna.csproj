@@ -12,6 +12,8 @@
     <None Remove="Imagenes\background.jpg" />
     <None Remove="Imagenes\key-icon.png" />
     <None Remove="Imagenes\Kuna.png" />
+    <None Remove="Imagenes\KunaLetras.png" />
+    <None Remove="Imagenes\profile-picture.png" />
     <None Remove="Imagenes\user-icon.png" />
   </ItemGroup>
 
@@ -21,6 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="data.provider.core.sqlserver" Version="1.0.2.2" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="MongoDB.Data" Version="1.1.0" />
     <PackageReference Include="RestSharp" Version="110.2.0" />
   </ItemGroup>
@@ -28,6 +31,8 @@
   <ItemGroup>
     <Resource Include="Imagenes\key-icon.png" />
     <Resource Include="Imagenes\Kuna.png" />
+    <Resource Include="Imagenes\KunaLetras.png" />
+    <Resource Include="Imagenes\profile-picture.png" />
     <Resource Include="Imagenes\user-icon.png" />
   </ItemGroup>
 
