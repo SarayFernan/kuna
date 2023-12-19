@@ -21,6 +21,8 @@ namespace kuna.ViewModels
         public string color;
         public string caracteristicas;
 
+        private string verificationMessage;
+
         public string Nombre
         {
             get { return nombre; }
@@ -132,6 +134,20 @@ namespace kuna.ViewModels
             }
         }
 
+        public string VerificationMessage
+        {
+            get
+            {
+                return verificationMessage;
+            }
+
+            set
+            {
+                verificationMessage = value;
+                OnPropertyChanged(nameof(verificationMessage));
+            }
+        }
+
         public void Postear()
         {
             // Verifica si los campos obligatorios están llenos
@@ -144,6 +160,10 @@ namespace kuna.ViewModels
             {
                 // Opcional: Limpia los campos después de realizar el post
                 ServicePost.Post(nombre, especie, edad, imagen, tamanio, raza, color, caracteristicas);
+                VerificationMessage = "Se ha creado el post correctamente";
+
+                Limpiar();
+
 
             }
         }
@@ -158,6 +178,7 @@ namespace kuna.ViewModels
             Imagen = "";
             Color = "";
             Caracteristicas = "";
+            verificationMessage = "";
         }
 
     }

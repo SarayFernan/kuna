@@ -251,6 +251,13 @@
                              AlignmentX="Left"/>
                     </TextBox.Background>
                 </TextBox>
+                <TextBlock Text="{Binding VerificationMessage}"
+                            Foreground="Red"
+                            FontSize="12"
+                            FontWeight="Medium"
+                            FontFamily="Monsterrat"
+                            Margin="0,10,0,0"
+                            TextWrapping="Wrap"/>
 
                 <Button x:Name="POST"
                              BorderThickness="0"
@@ -259,7 +266,7 @@
                              FontSize="12"
                              FontFamily="Montserrat"
                              Cursor="Hand"
-                             Click="BtnPost_Click" Height="61" Width="287">
+                             Click="BtnPost_Click" Height="43" Width="261">
 
                     <Button.Style>
                         <Style TargetType="{x:Type Button}">

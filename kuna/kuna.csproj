@@ -13,6 +13,7 @@
     <None Remove="Imagenes\key-icon.png" />
     <None Remove="Imagenes\Kuna.png" />
     <None Remove="Imagenes\KunaLetras.png" />
+    <None Remove="Imagenes\profile-picture.jpg" />
     <None Remove="Imagenes\profile-picture.png" />
     <None Remove="Imagenes\user-icon.png" />
   </ItemGroup>
@@ -32,7 +33,7 @@
     <Resource Include="Imagenes\key-icon.png" />
     <Resource Include="Imagenes\Kuna.png" />
     <Resource Include="Imagenes\KunaLetras.png" />
-    <Resource Include="Imagenes\profile-picture.png" />
+    <Resource Include="Imagenes\profile-picture.jpg" />
     <Resource Include="Imagenes\user-icon.png" />
   </ItemGroup>
 

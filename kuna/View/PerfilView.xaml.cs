@@ -1,4 +1,6 @@
-﻿using System;
+﻿using kuna.ViewModel;
+using kuna.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,11 @@ namespace kuna.View
     /// </summary>
     public partial class PerfilView : UserControl
     {
+        private PerfilViewModel viewModel = new PerfilViewModel();
         public PerfilView()
         {
             InitializeComponent();
+            DataContext = viewModel;
         }
 
 

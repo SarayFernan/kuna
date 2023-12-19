@@ -17,7 +17,7 @@
             </LinearGradientBrush>
         </Border.Background>
 
-        <StackPanel Margin="171,0,171,0">
+        <StackPanel Margin="171,0,174,0">
 
 
             <Ellipse Height="124" Width="134"
@@ -25,47 +25,50 @@
                      StrokeThickness="2">
 
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Imagenes/profile-picture.png"/>
+                    <ImageBrush ImageSource="/Imagenes/profile-picture.jpg"/>
                 </Ellipse.Fill>
 
             </Ellipse>
 
-            <TextBlock Text="Nombre"
-                          Foreground="Brown"
+            <TextBlock Text="Nombre :"
+                          Foreground="#481c0c"
                           FontSize="25"
                           FontWeight="Medium"
                           FontFamily="Monsterrat"
                           Margin="0,20,0,0"/>
-            <TextBlock Text=""
-                      Foreground="Brown"
-                      FontSize="15"
-                      FontWeight="Medium"
-                      FontFamily="Monsterrat"
-                      Margin="0,20,0,0"/>
+            <TextBlock x:Name="nombre"
+                    Text="{Binding Nombre , UpdateSourceTrigger=PropertyChanged}"
+                    Background="#ffe7bf"
+                    Foreground="Brown"
+                    FontSize="15"
+                    FontWeight="Medium"
+                    FontFamily="Monsterrat"
+                    Margin="0,20,0,0" Height="28"/>
 
-            <TextBlock Text="Correo"
-                      Foreground="Brown"
+            <TextBlock Text="Sobre mi :"
+                      Foreground="#481c0c"
                       FontSize="25"
                       FontWeight="Medium"
                       FontFamily="Monsterrat"
-                      Margin="0,20,0,0"/>
+                      Margin="0,20,0,0" Height="29" Width="452"/>
 
-            <TextBlock Text=""
-                      Foreground="Brown"
-                      FontSize="15"
-                      FontWeight="Medium"
-                      FontFamily="Monsterrat"
-                      Margin="0,20,0,0"/>
+            <TextBlock x:Name="sobreMI"
+                    Text="{Binding sOBREmi , UpdateSourceTrigger=PropertyChanged}"
+                    Background="#ffe7bf"
+                    Foreground="Brown"
+                    FontSize="15"
+                    FontWeight="Medium"
+                    FontFamily="Monsterrat"
+                    Margin="0,20,0,0" Height="69"/>
 
             <Button x:Name="EDIT"
-                         Command="{Binding PostCommand}"
                          BorderThickness="0"
                          Content="EDITAR"
                          Foreground="Brown"
                          FontSize="15"
                          FontFamily="Montserrat"
                          Cursor="Hand"
-                         Click="BtnEdit_Click" Height="111" Width="442" RenderTransformOrigin="0.504,1.037">
+                         Click="BtnEdit_Click" Height="56" Width="392" RenderTransformOrigin="0.504,1.037">
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">

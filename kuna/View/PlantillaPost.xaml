@@ -48,7 +48,7 @@
                          Margin="10,0,10,0">
 
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="/Imagenes/profile-picture.png"/>
+                        <ImageBrush ImageSource="/Imagenes/profile-picture.jpg"/>
                     </Ellipse.Fill>
 
                 </Ellipse>
@@ -57,13 +57,13 @@
             </StackPanel>
 
             <StackPanel Margin="144,20,130,255" RenderTransformOrigin="0.498,0.377">
-
+                <Image x:Name="imagen" Height="125"/>
             </StackPanel>
 
             <StackPanel Margin="80,150,66,5" >
 
                 <StackPanel Height="226" Width="332">
-                    <TextBlock x:Name="txtImagen"
+                    <TextBlock 
                         Tag="{StaticResource color4}" Height="20" RenderTransformOrigin="0.493,-0.497" Width="287">
                         <fa:IconImage Icon="Pencil" Style="{StaticResource iconButtonIcon}"/>
                         <TextBlock Text="Descripción" Style="{StaticResource menuButtonText}"/>

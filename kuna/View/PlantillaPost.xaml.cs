@@ -26,13 +26,25 @@ namespace kuna.View
         {
             InitializeComponent();
             postId = post.Id;
-            txtNombre.Text = post.Name;
-            txtEdad.Text = post.Age.ToString();
-            txtRaza.Text = post.Breed;
-            txtImagen.Text = post.Image;
-            txtTamanio.Text = post.Size;
-            txtColor.Text = post.Color;
-            txtCaracteristicas.Text = post.Characteristics;
+            txtNombre.Text += post.Name;
+            txtEspecie.Text += post.Species;
+            txtEdad.Text += post.Age.ToString();
+            txtRaza.Text += post.Breed;
+            imagen.Source = CargarImagen(post.Image);
+            txtTamanio.Text += post.Size;
+            txtColor.Text += post.Color;
+            txtCaracteristicas.Text += post.Characteristics;
+        }
+
+        private BitmapImage CargarImagen(string url)
+        {
+            BitmapImage imagen = new BitmapImage();
+
+            imagen.BeginInit();
+            imagen.UriSource = new Uri(url, UriKind.RelativeOrAbsolute);
+            imagen.EndInit();
+
+            return imagen;
         }
 
         //Opcion que elimina el post y todo los datos de este 
