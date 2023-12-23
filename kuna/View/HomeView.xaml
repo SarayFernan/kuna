@@ -7,7 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border CornerRadius="10,0,0,10" HorizontalAlignment="Center" Width="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="10" HorizontalAlignment="Center" Width="800" Grid.Row="1">
             <Border.Background>
                 <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
                     <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
@@ -16,13 +21,111 @@
             </Border.Background>
         </Border>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <StackPanel Orientation="Horizontal" Margin="4">
+            <Label Content="Especie" Margin="5" Width="52" FontWeight="Bold" Foreground="Brown"/>
+            <ComboBox Width="70"
+                    Text="{Binding Especie , UpdateSourceTrigger=PropertyChanged}">
+                <ComboBoxItem Content="Todas" />
+                <ComboBoxItem Content="Gatos" />
+                <ComboBoxItem Content="Perros"/>
+                <ComboBoxItem Content="Otros"/>
+            </ComboBox>
+
+            <Label Content="Edad" Width="40" Margin="5" FontWeight="Bold" Foreground="Brown"/>
+            <TextBox Width="46" Background="Transparent" Margin="10"
+                    Text="{Binding Edad , UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Content="Tamaño" Width="55" FontWeight="Bold" Foreground="Brown" Margin="5"/>
+            <ComboBox RenderTransformOrigin="0.5,0.5" Width="68"
+                    Text="{Binding Tamanio , UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="0"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="0"/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <ComboBoxItem Content="Cualquiera"/>
+                <ComboBoxItem Content="Pequeño"/>
+                <ComboBoxItem Content="Mediano"/>
+                <ComboBoxItem Content="Grande"/>
+            </ComboBox>
+
+            <Label Content="Color" Width="40" FontWeight="Bold" Foreground="Brown" Margin="5"/>
+            <TextBox Width="67" Background="Transparent" Margin="10"
+                    Text="{Binding Color, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button Content="Aplicar" Click="AplicarClick"
+                    x:Name="BtnAplicar"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    Tag="{StaticResource color1}"
+                    Foreground="Brown"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand" Width="154">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#c9c987"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#fad3b2"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="40"
+                                CornerRadius="20"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+            <Button Content="Reset" Click="ResetClick" 
+                    x:Name="BtnReset"
+                    BorderThickness="0"
+                    FontWeight="Bold"
+                    Tag="{StaticResource color1}"
+                    Foreground="Brown"
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Grid.Column="2" Width="159">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#c9c987"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#fad3b2"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="150" Height="40"
+                                CornerRadius="20"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                            HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Background="Transparent" Grid.Row="1">
             <StackPanel x:Name="VistaPosts"/>
         </ScrollViewer>
-
-        <ContentControl Content="{Binding CurrentPostView}"
-                Grid.Row="2"
-                Margin="25"/>
 
     </Grid>
 </UserControl>

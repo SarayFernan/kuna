@@ -29,18 +29,26 @@
 
             <Grid>
                 <TextBlock FontFamily = "Verdana" 
-                     LineStackingStrategy = "MaxHeight" LineHeight = "10"  
-                     TextWrapping = "Wrap"  Margin = "94,8,94,10">
+                     LineStackingStrategy = "MaxHeight" LineHeight = "14"  
+                     TextWrapping = "Wrap"  Margin = "94,0,94,18">
 			
-                     Use the <Run FontSize = "30">LineStackingStrategy</Run> property to determine how
-                        a line box is created for each line. A value of <Run FontSize = "20">MaxHeight</Run> 
-                        specifies that the stack height is the smallest value that contains all the inline 
-                        elements on that line when those elements are properly aligned. A value of <Run 
-                        FontSize = "20"> BlockLineHeight</Run> specifies that the stack height is 
-                        determined by the block element LineHeight property value.
+                        <Run FontSize = "30">Kuna</Run><Run FontSize = "15">La aplicación para adopción de mascotas es una plataforma 
+                    en línea diseñada para abordar y mitigar los problemas asociados con el abandono y la compraventa
+                    de animales de compañía. Su objetivo principal es proporcionar un espacio virtual donde los usuarios 
+                    pueden compartir información detallada sobre mascotas en busca de un nuevo hogar y conectar fácilmente
+                    con posibles adoptantes.</Run>
                 </TextBlock>
             </Grid>
-
+            <DockPanel Width="600">
+                <Image Source="/Imagenes/biru2.jpg"
+                        DockPanel.Dock="Right" Width="187" Height="247"/>
+                <Image Source="/Imagenes/profile-picture.jpg"
+                        DockPanel.Dock="Left" Width="183"/>
+                <Image Source="/Imagenes/manchitas.jpg"
+                        DockPanel.Dock="Left" Width="144"/>
+            </DockPanel>
+            <Image Source="/Imagenes/Kuna.png"
+                    Width="160" Height="138" HorizontalAlignment="Right"/>
 
         </StackPanel>
 

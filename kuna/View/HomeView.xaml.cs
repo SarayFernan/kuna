@@ -22,24 +22,42 @@ namespace kuna.View
     /// </summary>
     public partial class HomeView : UserControl
     {
+        public static HomeView view;
         private HomeViewModel viewModel = new HomeViewModel();
         public HomeView()
         {
             InitializeComponent();
             DataContext = viewModel;
-            CargarPosts();
+            MostrarPosts(viewModel.GetPosts());
+            view = this;
         }
 
 
-        public void CargarPosts()
+        public void MostrarPosts(List<PostModel> posts)
         {
-            List<PostModel> posts = viewModel.CargarPosts();
+            VistaPosts.Children.Clear();
 
             foreach (var post in posts)
             {
                 PlantillaPost p = new PlantillaPost(post);
                 VistaPosts.Children.Add(p);
             }
+        }
+
+        private void AplicarClick(object sender, RoutedEventArgs e)
+        {
+            MostrarPosts(viewModel.GetPostsFiltrados());
+        }
+
+        private void ResetClick(object sender, RoutedEventArgs e)
+        {
+            MostrarPosts(viewModel.GetPosts());
+            viewModel.Reset();
+        }
+
+        public void UpdateAfterDelete(PlantillaPost eliminado)
+        {
+            VistaPosts.Children.Remove(eliminado);
         }
     }
 }

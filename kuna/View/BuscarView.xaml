@@ -17,6 +17,124 @@
             </LinearGradientBrush>
         </Border.Background>
 
+        <StackPanel Margin="10,10,25,354">
+            <Grid Height="173" Width="763">
+                <Button x:Name="BtnPerros"
+                        BorderThickness="0"
+                        Content="PERROS"
+                        Foreground="#af514d"
+                        FontWeight="Bold"
+                        FontSize="15"
+                        FontFamily="Fantasy"
+                        Cursor="Hand"
+                        Click="ButtonPerros_Click" RenderTransformOrigin="1.122,-7.3" Margin="124,0,432,95">
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#c9c987"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#fad3b2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="40"
+                        CornerRadius="20"
+                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnGatos"
+                        BorderThickness="0"
+                        Content="GATOS"
+                        Foreground="#af514d"
+                        FontWeight="Bold"
+                        FontSize="15"
+                        FontFamily="Fantasy"
+                        Cursor="Hand"
+                        Click="ButtonGatos_Click" Width="176" Margin="294,10,295,106">
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#c9c987"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#fad3b2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="40"
+                                    CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Button x:Name="BtnOtros"
+                        BorderThickness="0"
+                        Content="OTROS"
+                        Foreground="#af514d"
+                        FontWeight="Bold"
+                        FontSize="15"
+                        FontFamily="Fantasy"
+                        Cursor="Hand"
+                        Click="ButtonOtros_Click" Margin="435,0,129,95">
+
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#c9c987"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#fad3b2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="40"
+                                    CornerRadius="20"
+                                    Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            <Grid Height="241">
+                <ContentControl Content="{Binding CurrentPostView}"
+                Grid.Row="2"
+                Margin="25"/>
+            </Grid>
+
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" Background="Transparent" Grid.Row="1">
+                <StackPanel x:Name="VistaPosts"/>
+            </ScrollViewer>
+
+        </StackPanel>
+
+        
+
+
     </Border>
+
+
 
 </UserControl>

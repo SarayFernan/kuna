@@ -96,18 +96,18 @@ namespace kuna.ViewModel
 
         public bool Login()
         {
-            bool autentication = ServiceUser.AuthenticateUser(Username, Password);
+            UserAccountModel userAccount = ServiceUser.AuthenticateUser(Username, Password);
 
-            if (!autentication)
+            if (userAccount == null)
             {
                 ErrorMessage = "Usuario o contraseña incorrecto";
             }
             else
             {
-                ServiceUser.username = Username;
+                ServiceUser.user = userAccount;
             }
 
-            return autentication;
+            return userAccount != null;
         }
        
 

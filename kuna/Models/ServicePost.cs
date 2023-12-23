@@ -24,7 +24,7 @@ namespace kuna.Models
         public static void Post(string nombre, string especie, int edad, string imagen, string tamanio, string raza, string color, string caracteristicas)
         {
             // Si la id da problemas poner un string vacio o un string con un 0
-            PostModel postM = new PostModel("", nombre, especie, edad, imagen, tamanio, raza, color, caracteristicas, DateTime.Now, ServiceUser.username);
+            PostModel postM = new PostModel("", nombre, especie, edad, imagen, tamanio, raza, color, caracteristicas, DateTime.Now, ServiceUser.user.Name);
 
             RestClient client = new RestClient("http://localhost:8000/posts");
             RestRequest request = new RestRequest("", Method.Post);
@@ -35,8 +35,9 @@ namespace kuna.Models
 
         public static void DeletePost(string id)
         {
-            RestClient client = new RestClient("http://localhost:8000/posts");
-            RestRequest request = new RestRequest("/" + id, Method.Delete);
+            string url = "http://localhost:8000/posts/" + id;
+            RestClient client = new RestClient(url);
+            RestRequest request = new RestRequest("", Method.Delete);
             client.Execute(request);
         }
     }

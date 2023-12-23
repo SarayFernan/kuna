@@ -53,8 +53,13 @@ namespace kuna
         private void btnMaximize_Click(object sender, RoutedEventArgs e)
         {
             if (this.WindowState == WindowState.Normal)
+            {
                 this.WindowState = WindowState.Maximized;
-            else this.WindowState = WindowState.Normal;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+            }
         }
 
         
@@ -78,6 +83,14 @@ namespace kuna
             //MainWindow mainView = new MainWindow();
             //PostearView.Show();
             
+
+        }
+
+
+        //TODO borrar usuario 
+        private void BtnBorrarUser_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult borrarUser = MessageBox.Show("Este boton sirve para borra tu usuario , ¿Seguro que quieres borrar tu cuenta?", "Eliminar cuenta", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
         }
     }

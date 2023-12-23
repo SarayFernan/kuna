@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace kuna.Models
 {
-    internal class UserAccountModel
+    public class UserAccountModel
     {
-        public string Username { get; set; }
-        public string DisplayName { get; set; }
-        public byte[] ProfilePicture { get; set; }
+        private string name;
+        private string aboutMe;
+        private string profilePicture;
+
+        public string Name { get => name; set => name = value; }
+        public string AboutMe { get => aboutMe; set => aboutMe = value; }
+        public string ProfilePicture { get => profilePicture; set => profilePicture = value; }
     }
 }

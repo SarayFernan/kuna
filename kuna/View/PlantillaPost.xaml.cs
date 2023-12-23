@@ -34,6 +34,11 @@ namespace kuna.View
             txtTamanio.Text += post.Size;
             txtColor.Text += post.Color;
             txtCaracteristicas.Text += post.Characteristics;
+
+            if (!ServiceUser.user.Name.Equals(post.User))
+            {
+                btnEliminar.Visibility = Visibility.Hidden;
+            }
         }
 
         private BitmapImage CargarImagen(string url)
@@ -48,10 +53,17 @@ namespace kuna.View
         }
 
         //Opcion que elimina el post y todo los datos de este 
-        //TODO ventana emergente :)
+        
         public void MenuEliminar_Click(object sender, RoutedEventArgs e)
         {
-            ServicePost.DeletePost(postId);
+            
+            MessageBoxResult cerrarSesion = MessageBox.Show("¿Seguro que quieres eliminar la publicación?", "Eliminar publicación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (cerrarSesion == MessageBoxResult.Yes)
+            {
+                ServicePost.DeletePost(postId);
+                HomeView.view.UpdateAfterDelete(this);
+            }
         }
     }
 }

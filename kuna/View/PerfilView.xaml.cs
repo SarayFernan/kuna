@@ -1,4 +1,6 @@
-﻿using kuna.ViewModel;
+﻿using kuna.Model;
+using kuna.Models;
+using kuna.ViewModel;
 using kuna.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -17,19 +19,37 @@ using System.Windows.Shapes;
 
 namespace kuna.View
 {
-    /// <summary>
-    /// Lógica de interacción para PerfilView.xaml
-    /// </summary>
     public partial class PerfilView : UserControl
     {
         private PerfilViewModel viewModel = new PerfilViewModel();
+
+        /*
+         * Se necesita una clase aparte de user para tener por un lado la estructura exacta
+         * de la autenticación ya que no puede sobrar ni faltar nada y por otro los datos de la aplicación
+         */
         public PerfilView()
         {
             InitializeComponent();
             DataContext = viewModel;
+            nombre.Text = ServiceUser.user.Name;
+            sobreMi.Text = ServiceUser.user.AboutMe;
+            imagen.ImageSource = CargarImagen(ServiceUser.user.ProfilePicture);
+        }
+
+        private BitmapImage CargarImagen(string url)
+        {
+            BitmapImage imagen = new BitmapImage();
+
+            imagen.BeginInit();
+            imagen.UriSource = new Uri(url, UriKind.RelativeOrAbsolute);
+            imagen.EndInit();
+
+            return imagen;
         }
 
 
+
+        //TODO 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             

@@ -25,7 +25,7 @@
                      StrokeThickness="2">
 
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Imagenes/profile-picture.jpg"/>
+                    <ImageBrush x:Name="imagen" ImageSource="/Imagenes/profile-picture.jpg"/>
                 </Ellipse.Fill>
 
             </Ellipse>
@@ -52,7 +52,7 @@
                       FontFamily="Monsterrat"
                       Margin="0,20,0,0" Height="29" Width="452"/>
 
-            <TextBlock x:Name="sobreMI"
+            <TextBlock x:Name="sobreMi"
                     Text="{Binding sOBREmi , UpdateSourceTrigger=PropertyChanged}"
                     Background="#ffe7bf"
                     Foreground="Brown"

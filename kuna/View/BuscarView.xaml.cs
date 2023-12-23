@@ -25,6 +25,21 @@ namespace kuna.View
             InitializeComponent();
         }
 
-        
+        public void ButtonPerros_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        public void ButtonGatos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
+        public void ButtonOtros_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

@@ -20,7 +20,7 @@ namespace kuna.ViewModels
 
             set
             {
-                nombre = ServiceUser.username;
+                nombre = value;
                 OnPropertyChanged(nameof(nombre));
             }
         }
@@ -35,7 +35,6 @@ namespace kuna.ViewModels
                 OnPropertyChanged(nameof(sobreMi));
             }
         }
-
          
     }
 }

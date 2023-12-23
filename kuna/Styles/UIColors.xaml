@@ -19,8 +19,6 @@
     <SolidColorBrush x:Key="color4" Color="#ffba7f"/>
     <SolidColorBrush x:Key="color5" Color="#dd7d42"/>
     <SolidColorBrush x:Key="color6" Color="#FFC047"/>
-    <SolidColorBrush x:Key="color7" Color="#d17424"/>
-    <!--c16730-->
     <SolidColorBrush x:Key="color8" Color="#fad3b2"/>
     <SolidColorBrush x:Key="color9" Color="#eee9e5"/>
     <SolidColorBrush x:Key="color10" Color="#e3a781"/>
@@ -37,9 +35,5 @@
     <SolidColorBrush x:Key="panelColor" Color="#d17424"/>
     <SolidColorBrush x:Key="panelOverColor" Color="#d17424"/>
     <SolidColorBrush x:Key="panelActiveColor" Color="#e99b6c"/>
-
-    <!--Button Colors-->
-    <!--TextBox Colors-->
-    <!--Etc-->
 
 </ResourceDictionary>

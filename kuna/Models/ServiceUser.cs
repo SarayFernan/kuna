@@ -18,9 +18,9 @@ namespace kuna.Models
 {
     internal class ServiceUser
     {
-        public static String username = null;
+        public static UserAccountModel user = null;
 
-        public static bool AuthenticateUser(string user , SecureString password)
+        public static UserAccountModel AuthenticateUser(string user , SecureString password)
         {
             UserModel userM = new UserModel();
             userM.Name = user;
@@ -30,7 +30,7 @@ namespace kuna.Models
             RestRequest request = new RestRequest("", Method.Post);
             request.RequestFormat = RestSharp.DataFormat.Json;
             request.AddBody(userM);
-            return client.Execute<bool>(request).Data;
+            return client.Execute<UserAccountModel>(request).Data;
         }
         
         private static string HandleSecureString(SecureString value)

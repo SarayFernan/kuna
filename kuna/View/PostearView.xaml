@@ -56,13 +56,12 @@
                          FontFamily="Monsterrat"
                          Margin="0,15,0,0" />
 
-                <TextBox x:Name="txtEspecie"
+                <ComboBox x:Name="txtEspecie"
                          Text="{Binding Especie , UpdateSourceTrigger=PropertyChanged}"
                          FontSize="13"
                          FontWeight="Medium"
                          FontFamily="Monsterrat"
                          Foreground="Brown"
-                         CaretBrush="DarkSalmon"
                          BorderBrush="Brown"
                          BorderThickness="0,0,0,2"
                          Height="20"
@@ -70,12 +69,16 @@
                          Margin="0,5,0,0" 
                  Padding="20,0,0,0">
 
-                    <TextBox.Background>
+                    <ComboBox.Background>
                         <ImageBrush 
                              Stretch="None"
                              AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
+                    </ComboBox.Background>
+
+                    <ComboBoxItem Content="Gatos"/>
+                    <ComboBoxItem Content="Perros"/>
+                    <ComboBoxItem Content="Otros"/>
+                </ComboBox>
 
 
 
@@ -138,7 +141,7 @@
             </StackPanel>
         </Border>
 
-        <Border Margin="420,57,36,10">
+        <Border Margin="446,34,10,34">
             <StackPanel Margin="30,0,0,0">
                 <TextBlock Text="Tamaño"
                  Foreground="Brown"
@@ -147,13 +150,12 @@
                  FontFamily="Monsterrat"
                  Margin="0,35,0,0"/>
 
-                <TextBox x:Name="txtTamanio"
+                <ComboBox x:Name="txtTamanio"
                   Text="{Binding Tamanio , UpdateSourceTrigger=PropertyChanged}"
                  FontSize="13"
                  FontWeight="Medium"
                  FontFamily="Monsterrat"
                  Foreground="Brown"
-                 CaretBrush="DarkSalmon"
                  BorderBrush="Brown"
                  BorderThickness="0,0,0,2"
                  Height="20"
@@ -161,12 +163,16 @@
                  Margin="0,5,0,0" 
                  Padding="20,0,0,0">
 
-                    <TextBox.Background>
+                    <ComboBox.Background>
                         <ImageBrush 
                              Stretch="None"
                              AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
+                    </ComboBox.Background>
+
+                    <ComboBoxItem Content="Pequeño"/>
+                    <ComboBoxItem Content="Mediano"/>
+                    <ComboBoxItem Content="Grande"/>
+                </ComboBox>
 
                 <TextBlock Text="Raza"
                      Foreground="Brown"

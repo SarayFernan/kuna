@@ -22,7 +22,6 @@ namespace kuna.View
     /// </summary>
     public partial class PostearView : UserControl
     {
-        // TODO corregir variables de todas las vistas y pasarlas al viewModel
         private PostearViewModel viewModel = new PostearViewModel();
 
         public PostearView()

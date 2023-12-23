@@ -10,9 +10,13 @@
 
   <ItemGroup>
     <None Remove="Imagenes\background.jpg" />
+    <None Remove="Imagenes\biru %281%29.jpg" />
+    <None Remove="Imagenes\biru2.jpg" />
     <None Remove="Imagenes\key-icon.png" />
     <None Remove="Imagenes\Kuna.png" />
     <None Remove="Imagenes\KunaLetras.png" />
+    <None Remove="Imagenes\kuna_cachorro.jpg" />
+    <None Remove="Imagenes\manchitas.jpg" />
     <None Remove="Imagenes\profile-picture.jpg" />
     <None Remove="Imagenes\profile-picture.png" />
     <None Remove="Imagenes\user-icon.png" />
@@ -30,9 +34,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Imagenes\biru (1).jpg" />
+    <Resource Include="Imagenes\biru2.jpg" />
     <Resource Include="Imagenes\key-icon.png" />
     <Resource Include="Imagenes\Kuna.png" />
     <Resource Include="Imagenes\KunaLetras.png" />
+    <Resource Include="Imagenes\kuna_cachorro.jpg" />
+    <Resource Include="Imagenes\manchitas.jpg" />
     <Resource Include="Imagenes\profile-picture.jpg" />
     <Resource Include="Imagenes\user-icon.png" />
   </ItemGroup>
