@@ -258,7 +258,7 @@
                     </TextBox.Background>
                 </TextBox>
                 <TextBlock Text="{Binding VerificationMessage}"
-                            Foreground="Red"
+                            Foreground="Green"
                             FontSize="12"
                             FontWeight="Medium"
                             FontFamily="Monsterrat"

@@ -1,4 +1,5 @@
 ﻿
+using kuna.Models;
 using kuna.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -28,15 +29,19 @@ namespace kuna.View
             }
         }
 
+        //MInimizar pantalla
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
         }
 
+        //Cerra pantalla
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+        //Boton logear , este metodo cierra la ventana login y muestra el main view
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             if (viewModel.Login())

@@ -17,9 +17,6 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace kuna.View
 {
-    /// <summary>
-    /// Lógica de interacción para PostearView.xaml
-    /// </summary>
     public partial class PostearView : UserControl
     {
         private PostearViewModel viewModel = new PostearViewModel();
@@ -30,12 +27,13 @@ namespace kuna.View
             DataContext = viewModel;
         }
 
+        
         private void BtnPost_Click(object sender, RoutedEventArgs e)
         {
             viewModel.Postear();
         }
 
-
+        //Limpiar elemntos de los textbox
         public void BtnLimpiarCampos_Click(object sender, RoutedEventArgs e)
         {
             viewModel.Limpiar();

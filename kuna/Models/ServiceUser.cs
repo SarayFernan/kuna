@@ -16,10 +16,12 @@ using System.Windows;
 
 namespace kuna.Models
 {
-    internal class ServiceUser
+    public class ServiceUser
     {
         public static UserAccountModel user = null;
 
+
+        //Metodo para utenticar que el usuario que introduce es correcto.
         public static UserAccountModel AuthenticateUser(string user , SecureString password)
         {
             UserModel userM = new UserModel();
@@ -29,12 +31,18 @@ namespace kuna.Models
             RestClient client = new RestClient("http://localhost:8000/authenticate");
             RestRequest request = new RestRequest("", Method.Post);
             request.RequestFormat = RestSharp.DataFormat.Json;
+            //La instancia de UserModel (userM) se agrega como el cuerpo de la solicitud.
             request.AddBody(userM);
+            //La propiedad Data de la respuesta se devuelve como resultado de la función.
             return client.Execute<UserAccountModel>(request).Data;
         }
-        
+
+
+
+        //Este metodo convierte un objeto SecureString en una cadena de texto. 
         private static string HandleSecureString(SecureString value)
         {
+            //puntero
             IntPtr valuePtr = IntPtr.Zero;
             try
             {
@@ -43,12 +51,45 @@ namespace kuna.Models
             }
             finally
             {
+                //para evitar posibles fugas de memoria.
                 Marshal.ZeroFreeGlobalAllocUnicode(valuePtr);
             }
         }
+
+        public static UserAccountModel EditUser(UserAccountModel updatedUser)
+        {
+            RestClient client = new RestClient("http://localhost:8000/useraccount");
+            RestRequest request = new RestRequest("", Method.Put);
+            request.RequestFormat = RestSharp.DataFormat.Json;
+
+            request.AddBody(updatedUser);
+
+            // es una interfaz en la biblioteca RestSharp que representa la respuesta recibida
+            // después de realizar una solicitud HTTP a través de la librería.
+            return client.Execute<UserAccountModel>(request).Data;
+
+        }
+
+
+        //metodo para eliminar usuarios
+        public static void DeleteUser(string userName)
+        {
+            string url = "http://localhost:8000/users/" + userName;
+            RestClient client = new RestClient(url);
+            RestRequest request = new RestRequest("", Method.Delete);
+            client.Execute(request);
+        }
+
+
+        //metodo para recoger usuario
+        public static UserAccountModel GetUserAccount(string userName)
+        {
+            string url = "http://localhost:8000/useraccount/" + userName;
+            RestClient client = new RestClient(url);
+            RestRequest request = new RestRequest("", Method.Get);
+            return client.Execute<UserAccountModel>(request).Data;
+        }
     }
-
-
 
 
 }

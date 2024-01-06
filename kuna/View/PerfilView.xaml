@@ -61,7 +61,7 @@
                     FontFamily="Monsterrat"
                     Margin="0,20,0,0" Height="69"/>
 
-            <Button x:Name="EDIT"
+            <Button x:Name="edit"
                          BorderThickness="0"
                          Content="EDITAR"
                          Foreground="Brown"
@@ -88,6 +88,38 @@
                                  Background="{TemplateBinding Background}">
                             <ContentPresenter VerticalAlignment="Center"
                                             HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button x:Name="borrar"
+                     BorderThickness="0"
+                     Content="ELIMINAR"
+                     Foreground="Brown"
+                     FontSize="15"
+                     FontFamily="Montserrat"
+                     Cursor="Hand"
+                     Click="btnEliminar_Click" Height="56" Width="392" RenderTransformOrigin="0.504,1.037">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#fad3b2"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#ff9c97"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="150" Height="40"
+                     CornerRadius="20"
+                     Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>

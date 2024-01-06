@@ -24,12 +24,8 @@
         </DataTemplate>
 
 
-        <DataTemplate DataType="{x:Type viewModel:BuscarViewModel}">
-            <local:BuscarView/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewModel:InformaciónView}">
-            <local:InformaciónView/>
+        <DataTemplate DataType="{x:Type viewModel:InformacionView}">
+            <local:InformacionView/>
         </DataTemplate>
 
 
@@ -37,7 +33,9 @@
             <local:PostearView/>
         </DataTemplate>
 
-
+        <DataTemplate DataType="{x:Type viewModel:PerfilEditViewModel}">
+            <local:PerfilEditView/>
+        </DataTemplate>
     </Window.Resources>
     
     
@@ -99,15 +97,6 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Paw" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Perfil" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color1}"
-                                 Command="{Binding ShowBuscarViewCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="search" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Explorar" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -262,30 +251,12 @@
                                      VerticalAlignment="Center"
                                      Margin="0,0,10,0">
 
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color1}" Click="BtnBorrarUser_Click">
-                                <fa:IconImage Icon="DeleteLeft" Style="{StaticResource iconButtonIcon}"/>
-                                
-                            </Button>
-
+                            
                             <TextBlock Text="{Binding CurrenyUSerAccount.DisplayName}"
                                        Foreground="{StaticResource titleColor1}"
                                        FontFamily="Monsterrat"
                                        FontSize="12"
                                        VerticalAlignment="Center"/>
-
-
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color4}">
-                                <fa:IconImage Icon="Envelope" Style="{StaticResource iconButtonIcon}"/>
-
-                            </Button>
-
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color5}">
-                                <fa:IconImage Icon="Bell" Style="{StaticResource iconButtonIcon}"/>
-
-                            </Button>
 
                             <Ellipse Height="35" Width="35"
                                      Stroke="{StaticResource color2}"
@@ -293,10 +264,12 @@
                                      Margin="10,0,10,0">
 
                                 <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Imagenes/profile-picture.jpg"/>
+                                    <ImageBrush x:Name="imagenMain" ImageSource="/Imagenes/profile-picture.jpg"/>
                                 </Ellipse.Fill>
 
                             </Ellipse>
+
+
 
                         </StackPanel>
 

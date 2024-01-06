@@ -33,6 +33,7 @@ namespace kuna.View
         }
 
 
+        //Metodo para mostrear los post en el home
         public void MostrarPosts(List<PostModel> posts)
         {
             VistaPosts.Children.Clear();
@@ -49,14 +50,17 @@ namespace kuna.View
             MostrarPosts(viewModel.GetPostsFiltrados());
         }
 
+        //Eliminar datos de los campos de filtros
         private void ResetClick(object sender, RoutedEventArgs e)
         {
             MostrarPosts(viewModel.GetPosts());
             viewModel.Reset();
         }
 
+
         public void UpdateAfterDelete(PlantillaPost eliminado)
         {
+            viewModel.UpdateAfterDelete(eliminado);
             VistaPosts.Children.Remove(eliminado);
         }
     }

@@ -16,30 +16,13 @@ using System.Windows.Shapes;
 namespace kuna.View
 {
     /// <summary>
-    /// Lógica de interacción para BuscarView.xaml
+    /// Lógica de interacción para InformacionView.xaml
     /// </summary>
-    public partial class BuscarView : UserControl
+    public partial class InformacionView : UserControl
     {
-        public BuscarView()
+        public InformacionView()
         {
             InitializeComponent();
         }
-
-        public void ButtonPerros_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        public void ButtonGatos_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        public void ButtonOtros_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

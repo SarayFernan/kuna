@@ -1,4 +1,5 @@
 ﻿using kuna.Models;
+using kuna.View;
 using kuna.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,7 @@ namespace kuna.ViewModels
             }
         }
 
+        // Método para obtener la lista de posts
         public void CargarPosts()
         {
             posts = ServicePost.GetPosts();
@@ -74,6 +76,7 @@ namespace kuna.ViewModels
             return posts;
         }
 
+        // Constructor
         public HomeViewModel()
         {
             Especie = "Todas";
@@ -81,17 +84,25 @@ namespace kuna.ViewModels
             Color = "";
         }
 
+        // Método para filtrar posts
         public List<PostModel> GetPostsFiltrados()
         {
+            // Lista que contendrá los posts filtrados
             List<PostModel> filtrados = new List<PostModel>();
 
             foreach (PostModel post in posts)
             {
+                // Condiciones de filtrado:
+                // 1. Si la especie es "Todas" o la especie del post coincide con la especie seleccionada
+                // 2. Si la edad es 0 o la edad del post está dentro del rango (Edad - 2) y (Edad + 2)
+                // 3. Si el tamaño es "Cualquiera" o el tamaño del post coincide con el tamaño seleccionado
+                // 4. Si el color del post contiene el color seleccionado (ignorando mayúsculas y minúsculas)
                 if ((Especie.Equals("Todas") || post.Species.Equals(Especie))
-                    && ((post.Age >= Edad - 2) && (post.Age <= Edad + 2))
+                    && (Edad == 0) || ((post.Age >= Edad - 2) && (post.Age <= Edad + 2))
                     && (Tamanio.Equals("Cualquiera") || post.Size.Equals(Tamanio))
                     && post.Color.IndexOf(Color, StringComparison.OrdinalIgnoreCase) >= 0) // equivalente a un supuesto método containsIgnoreCase
                 {
+                    // Agrega el post a la lista de filtrados
                     filtrados.Add(post);
                 }
             }
@@ -99,6 +110,13 @@ namespace kuna.ViewModels
             return filtrados;
         }
 
+        // Método para actualizar después de eliminar un post
+        public void UpdateAfterDelete(PlantillaPost eliminado)
+        {
+            posts.Remove(eliminado.Post);
+        }
+
+        // Método para restablecer valores
         public void Reset()
         {
             Edad = 0;

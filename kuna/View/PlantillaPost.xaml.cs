@@ -1,6 +1,7 @@
 ﻿using kuna.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,11 +22,22 @@ namespace kuna.View
     /// </summary>
     public partial class PlantillaPost : UserControl
     {
-        private string postId;
+        private PostModel post;
+
+        public PostModel Post
+        {
+            get { return post; }
+
+            set
+            {
+                post = value;
+            }
+        }
+
         public PlantillaPost(PostModel post)
         {
             InitializeComponent();
-            postId = post.Id;
+            this.post = post;
             txtNombre.Text += post.Name;
             txtEspecie.Text += post.Species;
             txtEdad.Text += post.Age.ToString();
@@ -34,6 +46,7 @@ namespace kuna.View
             txtTamanio.Text += post.Size;
             txtColor.Text += post.Color;
             txtCaracteristicas.Text += post.Characteristics;
+            imagenPlantilla.ImageSource = CargarImagen(ServiceUser.GetUserAccount(post.User).ProfilePicture);
 
             if (!ServiceUser.user.Name.Equals(post.User))
             {
@@ -57,11 +70,11 @@ namespace kuna.View
         public void MenuEliminar_Click(object sender, RoutedEventArgs e)
         {
             
-            MessageBoxResult cerrarSesion = MessageBox.Show("¿Seguro que quieres eliminar la publicación?", "Eliminar publicación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            MessageBoxResult eliminarPost = MessageBox.Show("¿Seguro que quieres eliminar la publicación?", "Eliminar publicación", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (cerrarSesion == MessageBoxResult.Yes)
+            if (eliminarPost == MessageBoxResult.Yes)
             {
-                ServicePost.DeletePost(postId);
+                ServicePost.DeletePost(post.Id);
                 HomeView.view.UpdateAfterDelete(this);
             }
         }

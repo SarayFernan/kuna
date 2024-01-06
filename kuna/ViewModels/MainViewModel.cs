@@ -14,6 +14,7 @@ namespace kuna.ViewModels
     {
         //private UserAccountModel _curentUserAccount;
         //private ServiceUser userRepository;
+        public static MainViewModel mainViewModel;
 
         private ViewModelBase currentChildView;
         private String caption;
@@ -71,16 +72,15 @@ namespace kuna.ViewModels
 
         public MainViewModel()
         {
-            LoadCurrentUserData();
-
-            //Inicializar comandos
+            mainViewModel = this;
+            // Comandos para mostrar vistas específicas en la interfaz de usuario
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowBuscarViewCommand = new ViewModelCommand(ExecuteShowBuscarViewCommand);
             ShowPerfilViewCommand = new ViewModelCommand(ExecuteShowPerfilViewCommand);
             ShowInformacionViewCommand = new ViewModelCommand(ExecuteShowInformacionViewCommand);
             ShowPostViewCommand = new ViewModelCommand(ExecuteShowPostViewCommand);
 
-            //Vista predeterminada Home
+            // Mostrar la vista de inicio al inicializar
             ExecuteShowHomeViewCommand(null);
         }
 
@@ -91,24 +91,15 @@ namespace kuna.ViewModels
             Icon = IconChar.Edit;
         }
 
-        private void LoadCurrentUserData()
-        {
-            //Para mostrar los datos y usar binding en perfil 
-            //1.VAlidar usuario que ya lo tenemos 
-            //var isValid = ServiceUser.AuthenticateUser();
-            //if (isVAlidUSer){
-
-        }
-
         private void ExecuteShowInformacionViewCommand(object obj)
         {
-            CurrentChildView = new InformaciónView();
+            CurrentChildView = new InformacionView();
             Caption = "Información";
             Icon = IconChar.InfoCircle;
         }
 
         //PERFIL
-        private void ExecuteShowPerfilViewCommand(object obj)
+        public void ExecuteShowPerfilViewCommand(object obj)
         {
             CurrentChildView = new PerfilViewModel();
             Caption = "Perfil";
@@ -129,6 +120,13 @@ namespace kuna.ViewModels
             CurrentChildView = new HomeViewModel();
             Caption = "Inicio";
             Icon = IconChar.Home;
+        }
+
+        //EDIT PERFIL
+        public void ShowPerfilEditView()
+        {
+            CurrentChildView = new PerfilEditViewModel();
+            Caption = "Editar Perfil";
         }
     }
 }

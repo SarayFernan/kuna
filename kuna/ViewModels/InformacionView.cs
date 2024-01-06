@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace kuna.ViewModels
 {
-    public class InformaciónView : ViewModelBase
+    public class InformacionView : ViewModelBase
     {
     }
 }

@@ -233,30 +233,7 @@
                         </Button.Template>
                     </Button>
 
-                    <StackPanel Orientation="Horizontal"
-                                HorizontalAlignment="Center"
-                                Margin="0,15,0,0">
-
-                        <TextBlock Text="Forgot Password"
-                                Foreground="Brown"
-                                FontSize="12"
-                                FontWeight="Medium"
-                                FontFamily="Monsterrat"/>
-
-                        <RadioButton Style="{StaticResource menuButton}"
-                                 Background="Transparent"
-                                 Click="btnResetSesion_Click" Width="59" Height="17">
-                            
-                            <TextBlock Text="Reset"
-                                    Foreground="Brown"
-                                    FontSize="12"
-                                    FontWeight="Medium"
-                                    FontFamily="Monsterrat"
-                                    Cursor="Hand"
-                                    Margin="8,0,0,0"/>
-                        </RadioButton>
-                        
-                    </StackPanel>
+                    
                 </StackPanel>
             </Grid>
         </Border>
