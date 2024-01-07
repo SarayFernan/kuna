@@ -25,7 +25,7 @@
                      StrokeThickness="2">
 
                 <Ellipse.Fill>
-                    <ImageBrush x:Name="imagen" ImageSource="/Imagenes/profile-picture.jpg"/>
+                    <ImageBrush x:Name="imagen" ImageSource="{Binding Imagen , UpdateSourceTrigger=PropertyChanged}"/>
                 </Ellipse.Fill>
 
             </Ellipse>
@@ -50,10 +50,10 @@
                       FontSize="25"
                       FontWeight="Medium"
                       FontFamily="Monsterrat"
-                      Margin="0,20,0,0" Height="29" Width="452"/>
+                      Margin="0,20,0,0"/>
 
             <TextBlock x:Name="sobreMi"
-                    Text="{Binding sOBREmi , UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding SobreMi , UpdateSourceTrigger=PropertyChanged}"
                     Background="#ffe7bf"
                     Foreground="Brown"
                     FontSize="15"
@@ -68,7 +68,8 @@
                          FontSize="15"
                          FontFamily="Montserrat"
                          Cursor="Hand"
-                         Click="BtnEdit_Click" Height="56" Width="392" RenderTransformOrigin="0.504,1.037">
+                         Click="BtnEdit_Click" Height="56" Width="392" RenderTransformOrigin="0.504,1.037"
+                         Visibility="{Binding Editar , UpdateSourceTrigger=PropertyChanged}">
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">
@@ -100,7 +101,8 @@
                      FontSize="15"
                      FontFamily="Montserrat"
                      Cursor="Hand"
-                     Click="btnEliminar_Click" Height="56" Width="392" RenderTransformOrigin="0.504,1.037">
+                     Click="btnEliminar_Click" Height="56" Width="392" RenderTransformOrigin="0.504,1.037"
+                     Visibility="{Binding Editar , UpdateSourceTrigger=PropertyChanged}">
 
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">

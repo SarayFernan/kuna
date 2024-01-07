@@ -91,7 +91,7 @@
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
+                    <RadioButton x:Name="btn_Perfil" Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color1}"
                                  Command="{Binding ShowPerfilViewCommand}">
                         <StackPanel Orientation="Horizontal">
@@ -214,7 +214,7 @@
                                         Content="﹘"
                                         Style="{StaticResource controlButton}"
                                         Tag="{StaticResource color1}"
-                                        Click="btnMaximize_Click">
+                                        Click="btnMinimize_Click">
                         </Button>
 
                     </StackPanel>

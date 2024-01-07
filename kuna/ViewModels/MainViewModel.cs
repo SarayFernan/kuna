@@ -101,9 +101,10 @@ namespace kuna.ViewModels
         //PERFIL
         public void ExecuteShowPerfilViewCommand(object obj)
         {
-            CurrentChildView = new PerfilViewModel();
+            CurrentChildView = new PerfilViewModel((UserAccountModel)obj);
             Caption = "Perfil";
             Icon = IconChar.Paw;
+            MainWindow.window.ActualizarBotonesMostrarPerfil();
         }
 
         //BUSCAR

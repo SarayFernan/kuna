@@ -1,4 +1,5 @@
 ﻿using kuna.Models;
+using kuna.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -23,6 +24,7 @@ namespace kuna.View
     public partial class PlantillaPost : UserControl
     {
         private PostModel post;
+        private UserAccountModel user;
 
         public PostModel Post
         {
@@ -46,7 +48,10 @@ namespace kuna.View
             txtTamanio.Text += post.Size;
             txtColor.Text += post.Color;
             txtCaracteristicas.Text += post.Characteristics;
-            imagenPlantilla.ImageSource = CargarImagen(ServiceUser.GetUserAccount(post.User).ProfilePicture);
+
+            user = ServiceUser.GetUserAccount(post.User);
+
+            imagenPlantilla.ImageSource = CargarImagen(user.ProfilePicture);
 
             if (!ServiceUser.user.Name.Equals(post.User))
             {
@@ -66,10 +71,10 @@ namespace kuna.View
         }
 
         //Opcion que elimina el post y todo los datos de este 
-        
+
         public void MenuEliminar_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MessageBoxResult eliminarPost = MessageBox.Show("¿Seguro que quieres eliminar la publicación?", "Eliminar publicación", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (eliminarPost == MessageBoxResult.Yes)
@@ -77,6 +82,10 @@ namespace kuna.View
                 ServicePost.DeletePost(post.Id);
                 HomeView.view.UpdateAfterDelete(this);
             }
+        }
+        public void UserIconClick(object sender, MouseButtonEventArgs e)
+        {
+            MainViewModel.mainViewModel.ExecuteShowPerfilViewCommand(user);
         }
     }
 }

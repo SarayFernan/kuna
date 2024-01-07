@@ -21,8 +21,6 @@ namespace kuna.View
 {
     public partial class PerfilView : UserControl
     {
-        private PerfilViewModel viewModel = new PerfilViewModel();
-
         /*
          * Se necesita una clase aparte de user para tener por un lado la estructura exacta
          * de la autenticación ya que no puede sobrar ni faltar nada y por otro los datos de la aplicación
@@ -30,10 +28,7 @@ namespace kuna.View
         public PerfilView()
         {
             InitializeComponent();
-            DataContext = viewModel;
-            nombre.Text = ServiceUser.user.Name;
-            sobreMi.Text = ServiceUser.user.AboutMe;
-            imagen.ImageSource = CargarImagen(ServiceUser.user.ProfilePicture);
+            //imagen.ImageSource = CargarImagen(ServiceUser.user.ProfilePicture);
         }
 
         private BitmapImage CargarImagen(string url)
@@ -52,7 +47,7 @@ namespace kuna.View
         
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.Edit();
+            ((PerfilViewModel) DataContext).Edit();
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)

@@ -16,109 +16,175 @@
                 </LinearGradientBrush>
             </Border.Background>
 
-            <StackPanel
-                     Orientation="Vertical"
-                     Margin="31,72,448,53">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="20">
 
-                <TextBlock 
-                    Text="Nombre"
-                         Foreground="Brown"
-                         FontSize="12"
-                         FontWeight="Medium"
-                         FontFamily="Monsterrat"
-                         Margin="0,20,0,0"/>
+                    <TextBlock 
+                        Text="Nombre"
+                             Foreground="Brown"
+                             FontSize="12"
+                             FontWeight="Medium"
+                             FontFamily="Monsterrat"
+                             Margin="0,20,0,0"/>
 
-                <TextBox x:Name="txtNombre"
-                         Text="{Binding Nombre , UpdateSourceTrigger=PropertyChanged}"
-                         FontSize="13"
-                         FontWeight="Medium"
-                         FontFamily="Monsterrat"
-                         Foreground="Brown"
-                         CaretBrush="DarkSalmon"
-                         BorderBrush="Brown"
-                         BorderThickness="0,0,0,2"
-                         Height="20"
-                         VerticalContentAlignment="Center"
-                         Margin="0,5,0,0" 
-                         Padding="20,0,0,0">
+                    <TextBox x:Name="txtNombre"
+                             Text="{Binding Nombre , UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Monsterrat"
+                             Foreground="Brown"
+                             CaretBrush="DarkSalmon"
+                             BorderBrush="Brown"
+                             BorderThickness="0,0,0,2"
+                             Height="20"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" 
+                             Padding="20,0,0,0">
 
-                    <TextBox.Background>
-                        <ImageBrush 
-                     Stretch="None"
-                     AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
+                        <TextBox.Background>
+                            <ImageBrush 
+                         Stretch="None"
+                         AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
 
-                <TextBlock Text="Especie"
-                         Foreground="Brown"
-                         FontSize="12"
-                         FontWeight="Medium"
-                         FontFamily="Monsterrat"
-                         Margin="0,15,0,0" />
+                    <TextBlock Text="Especie"
+                             Foreground="Brown"
+                             FontSize="12"
+                             FontWeight="Medium"
+                             FontFamily="Monsterrat"
+                             Margin="0,15,0,0" />
 
-                <ComboBox x:Name="txtEspecie"
-                         Text="{Binding Especie , UpdateSourceTrigger=PropertyChanged}"
-                         FontSize="13"
-                         FontWeight="Medium"
-                         FontFamily="Monsterrat"
-                         Foreground="Brown"
-                         BorderBrush="Brown"
-                         BorderThickness="0,0,0,2"
-                         Height="20"
-                         VerticalContentAlignment="Center"
-                         Margin="0,5,0,0" 
-                 Padding="20,0,0,0">
+                    <ComboBox x:Name="txtEspecie"
+                             Text="{Binding Especie , UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Monsterrat"
+                             Foreground="Brown"
+                             BorderBrush="Brown"
+                             BorderThickness="0,0,0,2"
+                             Height="20"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" 
+                     Padding="20,0,0,0">
 
-                    <ComboBox.Background>
-                        <ImageBrush 
-                             Stretch="None"
-                             AlignmentX="Left"/>
-                    </ComboBox.Background>
+                        <ComboBox.Background>
+                            <ImageBrush 
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </ComboBox.Background>
 
-                    <ComboBoxItem Content="Gatos"/>
-                    <ComboBoxItem Content="Perros"/>
-                    <ComboBoxItem Content="Otros"/>
-                </ComboBox>
+                        <ComboBoxItem Content="Gatos"/>
+                        <ComboBoxItem Content="Perros"/>
+                        <ComboBoxItem Content="Otros"/>
+                    </ComboBox>
 
 
 
-                <TextBlock Text="Edad"
-                         Foreground="Brown"
-                         FontSize="12"
-                         FontWeight="Medium"
-                         FontFamily="Monsterrat"
-                         Margin="0,35,0,0"/>
-
-                <TextBox x:Name="txtEdad"
-                          Text="{Binding Edad , UpdateSourceTrigger=PropertyChanged}"
-                         FontSize="13"
-                         FontWeight="Medium"
-                         FontFamily="Monsterrat"
-                         Foreground="Brown"
-                         CaretBrush="DarkSalmon"
-                         BorderBrush="Brown"
-                         BorderThickness="0,0,0,2"
-                         Height="20"
-                         VerticalContentAlignment="Center"
-                         Margin="0,5,0,0" 
-                         Padding="20,0,0,0">
-
-                    <TextBox.Background>
-                        <ImageBrush 
-                             Stretch="None"
-                             AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBlock Text="Imagen"
+                    <TextBlock Text="Edad"
                              Foreground="Brown"
                              FontSize="12"
                              FontWeight="Medium"
                              FontFamily="Monsterrat"
                              Margin="0,35,0,0"/>
 
-                <TextBox x:Name="txtImagen"
-                          Text="{Binding Imagen , UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox x:Name="txtEdad"
+                              Text="{Binding Edad , UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Monsterrat"
+                             Foreground="Brown"
+                             CaretBrush="DarkSalmon"
+                             BorderBrush="Brown"
+                             BorderThickness="0,0,0,2"
+                             Height="20"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" 
+                             Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush 
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Imagen"
+                                 Foreground="Brown"
+                                 FontSize="12"
+                                 FontWeight="Medium"
+                                 FontFamily="Monsterrat"
+                                 Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtImagen"
+                              Text="{Binding Imagen , UpdateSourceTrigger=PropertyChanged}"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Monsterrat"
+                             Foreground="Brown"
+                             CaretBrush="DarkSalmon"
+                             BorderBrush="Brown"
+                             BorderThickness="0,0,0,2"
+                             Height="21"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0" 
+                             Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush 
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                </StackPanel>
+
+
+                <StackPanel Margin="20" Grid.Column="1">
+                    <TextBlock Text="Tamaño"
+                     Foreground="Brown"
+                     FontSize="12"
+                     FontWeight="Medium"
+                     FontFamily="Monsterrat"
+                     Margin="0,35,0,0"/>
+
+                    <ComboBox x:Name="txtTamanio"
+                      Text="{Binding Tamanio , UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="13"
+                     FontWeight="Medium"
+                     FontFamily="Monsterrat"
+                     Foreground="Brown"
+                     BorderBrush="Brown"
+                     BorderThickness="0,0,0,2"
+                     Height="20"
+                     VerticalContentAlignment="Center"
+                     Margin="0,5,0,0" 
+                     Padding="20,0,0,0">
+
+                        <ComboBox.Background>
+                            <ImageBrush 
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </ComboBox.Background>
+
+                        <ComboBoxItem Content="Pequeño"/>
+                        <ComboBoxItem Content="Mediano"/>
+                        <ComboBoxItem Content="Grande"/>
+                    </ComboBox>
+
+                    <TextBlock Text="Raza"
+                         Foreground="Brown"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Monsterrat"
+                         Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtRaza"
+                          Text="{Binding Raza , UpdateSourceTrigger=PropertyChanged}"
                          FontSize="13"
                          FontWeight="Medium"
                          FontFamily="Monsterrat"
@@ -126,193 +192,129 @@
                          CaretBrush="DarkSalmon"
                          BorderBrush="Brown"
                          BorderThickness="0,0,0,2"
-                         Height="21"
+                         Height="20"
                          VerticalContentAlignment="Center"
                          Margin="0,5,0,0" 
                          Padding="20,0,0,0">
 
-                    <TextBox.Background>
-                        <ImageBrush 
-                             Stretch="None"
-                             AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
+                        <TextBox.Background>
+                            <ImageBrush 
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
 
-            </StackPanel>
-        </Border>
+                    <TextBlock Text="Color"
+                         Foreground="Brown"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Monsterrat"
+                         Margin="0,35,0,0"/>
 
-        <Border Margin="446,34,10,34">
-            <StackPanel Margin="30,0,0,0">
-                <TextBlock Text="Tamaño"
-                 Foreground="Brown"
-                 FontSize="12"
-                 FontWeight="Medium"
-                 FontFamily="Monsterrat"
-                 Margin="0,35,0,0"/>
+                    <TextBox x:Name="txtColor"
+                          Text="{Binding Color , UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="13"
+                         FontWeight="Medium"
+                         FontFamily="Monsterrat"
+                         Foreground="Brown"
+                         CaretBrush="DarkSalmon"
+                         BorderBrush="Brown"
+                         BorderThickness="0,0,0,2"
+                         Height="20"
+                         VerticalContentAlignment="Center"
+                         Margin="0,5,0,0" 
+                         Padding="20,0,0,0">
 
-                <ComboBox x:Name="txtTamanio"
-                  Text="{Binding Tamanio , UpdateSourceTrigger=PropertyChanged}"
-                 FontSize="13"
-                 FontWeight="Medium"
-                 FontFamily="Monsterrat"
-                 Foreground="Brown"
-                 BorderBrush="Brown"
-                 BorderThickness="0,0,0,2"
-                 Height="20"
-                 VerticalContentAlignment="Center"
-                 Margin="0,5,0,0" 
-                 Padding="20,0,0,0">
+                        <TextBox.Background>
+                            <ImageBrush 
+                         Stretch="None"
+                         AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
 
-                    <ComboBox.Background>
-                        <ImageBrush 
-                             Stretch="None"
-                             AlignmentX="Left"/>
-                    </ComboBox.Background>
+                    <TextBlock Text="Caracteristicas"
+                         Foreground="Brown"
+                         FontSize="12"
+                         FontWeight="Medium"
+                         FontFamily="Monsterrat"
+                         Margin="0,35,0,0"/>
 
-                    <ComboBoxItem Content="Pequeño"/>
-                    <ComboBoxItem Content="Mediano"/>
-                    <ComboBoxItem Content="Grande"/>
-                </ComboBox>
+                    <TextBox x:Name="txtCaracteristicas"
+                          Text="{Binding Caracteristicas , UpdateSourceTrigger=PropertyChanged}"
+                         FontSize="13"
+                         FontWeight="Medium"
+                         FontFamily="Monsterrat"
+                         Foreground="Brown"
+                         CaretBrush="DarkSalmon"
+                         BorderBrush="Brown"
+                         BorderThickness="0,0,0,2"
+                         Height="20"
+                         VerticalContentAlignment="Center"
+                         Margin="0,5,0,0" 
+                         Padding="20,0,0,0">
 
-                <TextBlock Text="Raza"
-                     Foreground="Brown"
-                     FontSize="12"
-                     FontWeight="Medium"
-                     FontFamily="Monsterrat"
-                     Margin="0,35,0,0"/>
-
-                <TextBox x:Name="txtRaza"
-                      Text="{Binding Raza , UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="13"
-                     FontWeight="Medium"
-                     FontFamily="Monsterrat"
-                     Foreground="Brown"
-                     CaretBrush="DarkSalmon"
-                     BorderBrush="Brown"
-                     BorderThickness="0,0,0,2"
-                     Height="20"
-                     VerticalContentAlignment="Center"
-                     Margin="0,5,0,0" 
-                     Padding="20,0,0,0">
-
-                    <TextBox.Background>
-                        <ImageBrush 
-                             Stretch="None"
-                             AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBlock Text="Color"
-                     Foreground="Brown"
-                     FontSize="12"
-                     FontWeight="Medium"
-                     FontFamily="Monsterrat"
-                     Margin="0,35,0,0"/>
-
-                <TextBox x:Name="txtColor"
-                      Text="{Binding Color , UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="13"
-                     FontWeight="Medium"
-                     FontFamily="Monsterrat"
-                     Foreground="Brown"
-                     CaretBrush="DarkSalmon"
-                     BorderBrush="Brown"
-                     BorderThickness="0,0,0,2"
-                     Height="20"
-                     VerticalContentAlignment="Center"
-                     Margin="0,5,0,0" 
-                     Padding="20,0,0,0">
-
-                    <TextBox.Background>
-                        <ImageBrush 
-                     Stretch="None"
-                     AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBlock Text="Caracteristicas"
-                     Foreground="Brown"
-                     FontSize="12"
-                     FontWeight="Medium"
-                     FontFamily="Monsterrat"
-                     Margin="0,35,0,0"/>
-
-                <TextBox x:Name="txtCaracteristicas"
-                      Text="{Binding Caracteristicas , UpdateSourceTrigger=PropertyChanged}"
-                     FontSize="13"
-                     FontWeight="Medium"
-                     FontFamily="Monsterrat"
-                     Foreground="Brown"
-                     CaretBrush="DarkSalmon"
-                     BorderBrush="Brown"
-                     BorderThickness="0,0,0,2"
-                     Height="20"
-                     VerticalContentAlignment="Center"
-                     Margin="0,5,0,0" 
-                     Padding="20,0,0,0">
-
-                    <TextBox.Background>
-                        <ImageBrush 
-                             Stretch="None"
-                             AlignmentX="Left"/>
-                    </TextBox.Background>
-                </TextBox>
-                <TextBlock Text="{Binding VerificationMessage}"
-                            Foreground="Green"
-                            FontSize="12"
-                            FontWeight="Medium"
-                            FontFamily="Monsterrat"
-                            Margin="0,10,0,0"
-                            TextWrapping="Wrap"/>
-
-                <Button x:Name="POST"
-                             BorderThickness="0"
-                             Content="POSTEAR"
-                             Foreground="Brown"
-                             FontSize="12"
-                             FontFamily="Montserrat"
-                             Cursor="Hand"
-                             Click="BtnPost_Click" Height="43" Width="261">
-
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Setter Property="Background" Value="#fad3b2"/>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="#ff9c97"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-
-                    <Button.Template>
-                        <ControlTemplate TargetType="{x:Type Button}">
-                            <Border Width="150" Height="40"
-                                     CornerRadius="20"
-                                     Background="{TemplateBinding Background}">
-                                <ContentPresenter VerticalAlignment="Center"
-                                 HorizontalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-
-                <RadioButton Style="{StaticResource menuButton}"
-                             Background="Transparent"
-                             Click="BtnLimpiarCampos_Click" Width="59" Height="17">
-
-                    <TextBlock Text="Reset"
-                                Foreground="Brown"
+                        <TextBox.Background>
+                            <ImageBrush 
+                                 Stretch="None"
+                                 AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+                    <TextBlock Text="{Binding VerificationMessage}"
+                                Foreground="Green"
                                 FontSize="12"
                                 FontWeight="Medium"
                                 FontFamily="Monsterrat"
-                                Cursor="Hand"
-                                Margin="8,0,0,0"/>
-                </RadioButton>
-            </StackPanel>
+                                Margin="0,10,0,0"
+                                TextWrapping="Wrap"/>
+
+                    <Button x:Name="POST"
+                                 BorderThickness="0"
+                                 Content="POSTEAR"
+                                 Foreground="Brown"
+                                 FontSize="12"
+                                 FontFamily="Montserrat"
+                                 Cursor="Hand"
+                                 Click="BtnPost_Click" Height="43" Width="261">
+
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#fad3b2"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#ff9c97"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="150" Height="40"
+                                         CornerRadius="20"
+                                         Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                     HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Background="Transparent"
+                                 Click="BtnLimpiarCampos_Click" Width="59" Height="17">
+
+                        <TextBlock Text="Reset"
+                                    Foreground="Brown"
+                                    FontSize="12"
+                                    FontWeight="Medium"
+                                    FontFamily="Monsterrat"
+                                    Cursor="Hand"
+                                    Margin="8,0,0,0"/>
+                    </RadioButton>
+                </StackPanel>
+            </Grid>
 
         </Border>
-
 
     </Grid>
 </UserControl>

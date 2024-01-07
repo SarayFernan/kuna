@@ -96,6 +96,11 @@ namespace kuna
             }
         }
 
+        public void ActualizarBotonesMostrarPerfil()
+        {
+            btn_Perfil.IsChecked = true;
+        }
+
         private void BtnPost_Click(object sender, RoutedEventArgs e)
         {
             
